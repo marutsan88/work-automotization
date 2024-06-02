@@ -1,2 +1,7 @@
-# skypro_python_homeworks
-skypro_python_homeworks
+lesson_1_task_1.ru
+lesson_1_task_2.ru
+lesson_1_task_3.ru
+lesson_1_task_4.ru
+lesson_1_task_5.ru
+lesson_1_task_6.ru
+lesson_1_task_7.ru
