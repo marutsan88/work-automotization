@@ -1,32 +1,32 @@
 def a():
-    print(1, end = '')
+print(1, end = '')
 
 def b():
-    print(2, end = '')
+print(2, end = '')
 
 def c():
-    print(3, end = '')
+print(3, end = '')
 
 def d():
-    print(4, end = '')
+print(4, end = '')
 
 def e():
-    print(5, end = '')
+print(5, end = '')
 
 def f():
-    print(6, end = '')
+print(6, end = '')
 
 def g():
-    print(7, end = '')
+print(7, end = '')
 
 def h():
-    print(8, end = '')
+print(8, end = '')
 
 def i():
-    print(9, end = '')
+print(9, end = '')
 
 def j():
-    print(0, end = '')
+print(0, end = '')
 
 h()
 h()
