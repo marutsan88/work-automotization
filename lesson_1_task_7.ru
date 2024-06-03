@@ -1,5 +1,5 @@
 def с(num):
-    print(num, end = '')
+print(num, end = '')
 с(8)
 с(8)
 с(0)
