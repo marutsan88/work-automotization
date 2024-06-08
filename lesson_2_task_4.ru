@@ -1,6 +1,6 @@
 import math
 def square(side):
-    area = side ** 1
+    area = side ** 2
     rounded_area = math.ceil(area)
     return rounded_area
 side_length = 5
