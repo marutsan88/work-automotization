@@ -1,8 +1,8 @@
 1. Функция " to_list" не предусматривает вариант заполнения словами на латин, кирил.:
 
-Test case: string = ""Это не та дверь", delimeter = ","
-Expected Result: ["Это", "не та","дверь"]         
-Actual Result: ["Это не та дверь"]
+Test case: string = ""Привет Александр", delimeter = ","
+Expected Result: ["Привет", "Александр"]         
+Actual Result: ["Привет Александр"]
 
 Error message: FALLED
 
