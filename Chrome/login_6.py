@@ -22,7 +22,7 @@ sleep(2)
 password = "#password"
 password_input = driver.find_element(By.CSS_SELECTOR, password)
 sleep(2)
-password_input.send_keys("SuperSecretPassword")
+password_input.send_keys("SuperSecretPassword!")
 sleep(2)
 
 # Нажмите кнопку Login
