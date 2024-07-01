@@ -1,0 +1,27 @@
+1. Функция " to_list" не предусматривает вариант заполнения словами на латин, кирил.:
+
+Test case: string = ""Привет Александр", delimeter = ","
+Expected Result: ["Привет", "Александр"]         
+Actual Result: ["Привет Александр"]
+
+Error message: FAILLED
+
+2. Функция " to_list" не предусматривает вариант : 
+Test case:  string = "1,2,3,4,5", delimeter = ","  
+Expected Result:['1,2,3,4,5']
+Actual Result:   ['1', '2', '3', '4', '5']
+Error message: FAILLED
+
+3. Функция " list_to_string" не предусматривает вариант : 
+Test case:  lst = [1, 2, 3], joiner = '- '  
+Expected Result:'1-2-3'
+Actual Result:  '1- 2- 3'
+
+Error message: FAILLED
+
+4. Функция " is_empty_positive" не предусматривает вариант : 
+Test case:  string = 'Skypro'  
+Expected Result: False
+Actual Result:  True
+
+Error message: FAILLED
