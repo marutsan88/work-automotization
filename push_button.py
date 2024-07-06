@@ -6,9 +6,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 # Перейти на страницу 
-driver.implicitly_wait(20)
+driver.implicitly_wait(25)
 driver.get("http://www.uitestingplayground.com/ajax")
-# Найти эл-т и кликнуть
+# Найти элемент и кликнуть
 driver.find_element(By.CSS_SELECTOR, "#ajaxButton").click()
 # Изменить название кнопки
 content = driver.find_element(By.CSS_SELECTOR, "#content")
