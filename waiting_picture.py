@@ -14,7 +14,7 @@ element = WebDriverWait(driver, 12).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "#landscape"))# обязательно дождаться появления 4-й картинки
 )
 
-src = driver.find_element(By.CSS_SELECTOR, "#award").get_attribute("src") # Получите значение атрибута src у 3-й картинки.
+src = driver.find_element(By.CSS_SELECTOR, "#award").get_attribute("src") # Получите значение атрибута src у третьей картинки.
 
 print(src) # вывести в консоль
 
