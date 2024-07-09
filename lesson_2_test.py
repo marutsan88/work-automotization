@@ -32,3 +32,4 @@ def test_form_calculator():
     assert driver.find_element(By.CSS_SELECTOR, "div.screen").text == "15"
      
     driver.quit()
+# чтобы зыпустить Pytest, нужно в терминале ввести команду python -m pytest и  нажать Enter
