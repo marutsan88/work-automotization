@@ -48,3 +48,4 @@ def test_form_elements():
     assert field_color == 'rgba(209, 231, 221, 1)'
 
     driver.quit()
+# чтобы зыпустить Pytest, нужно в терминале ввести команду python -m pytest и  нажать Enter
