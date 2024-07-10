@@ -19,13 +19,13 @@ def test_form_calculator():
     input_delay.clear()
     input_delay.send_keys('3')
     driver.find_element(By.XPATH, '//span[contains(text(),"7")]').click()
-    sleep(3)
+    sleep(1)
     driver.find_element(By.XPATH, '//span[contains(text(),"+")]').click()
-    sleep(3)
+    sleep(1)
     driver.find_element(By.XPATH, '//span[contains(text(),"8")]').click()
-    sleep(3)
+    sleep(1)
     driver.find_element(By.XPATH, '//span[contains(text(),"=")]').click()
-    sleep(3)
+    sleep(1)
     WebDriverWait(driver, "48").until(
         EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15"))
 
