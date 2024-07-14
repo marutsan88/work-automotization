@@ -16,7 +16,8 @@ def test_form_internet_mag():
     driver.get("https://www.saucedemo.com/")
     driver.implicitly_wait(10)
     driver.maximize_window()
-    # Авторизация
+  
+    
     driver.find_element(By.CSS_SELECTOR, "#user-name").send_keys("standard_user")
     driver.find_element(By.CSS_SELECTOR, "#password").send_keys("secret_sauce")
     driver.find_element(By.CSS_SELECTOR, "#login-button").click()
