@@ -7,12 +7,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from Page.PersonalDataPage import PersonalDataPage
 
-@allure.feature("CREATE")
+@allure.story("Заполнение персональных данных")
+@allure.title("Заполнить персональные данные")
 @allure.id("PersonalData")
 @allure.severity("blocker")
-@allure.story("Заполнение персональных данных")
 @allure.epic("Персональные данные")
-@allure.title("Заполнить персональные данные")
+@allure.feature("CREATE")
 @allure.suite("Тесты на работу формы с заполнением персональных данных")
 def test_form_elements():
     with allure.step("Открытие веб-страницы Chrome"):
