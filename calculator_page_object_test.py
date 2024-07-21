@@ -7,10 +7,10 @@ from Page.CalculatorPage import CalculatorPage
 
 @allure.id("Calculator")
 @allure.epic("калькулятор")
-@allure.severity("blocker")
-@allure.suite("Тесты на работу с калькулятором")
-@allure.story("Выполнение математических операций на калькуляторе")
 @allure.title("Сложение чисел на калькуляторе")
+@allure.suite("Работа с калькулятором")
+@allure.severity("blocker")
+@allure.story("Математические операции")
 @allure.feature("CREATE")
 def test_form_calculator():
     with allure.step("Открытие веб-страницы Chrome"):
