@@ -14,14 +14,14 @@ class CalculatorPage:
         input_delay = self._driver.find_element(By.CSS_SELECTOR, 'input[id = "delay"]')
         input_delay.clear()
         input_delay.send_keys('3')
-
+# ввод чисел в калькулятор и запуска операции сложения
     def sum_of_the_numbers(self):
         self._driver.find_element(By.XPATH, '//span[contains(text(),"7")]').click()
         self._driver.find_element(By.XPATH, '//span[contains(text(),"+")]').click()
         self._driver.find_element(By.XPATH, '//span[contains(text(),"8")]').click()
         self._driver.find_element(By.XPATH, '//span[contains(text(),"=")]').click()
 
-    
+    # получениt результата сложения
     def get_result(self):
             WebDriverWait(self._driver, "48").until(
                 EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15"))
