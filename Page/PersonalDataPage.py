@@ -10,7 +10,7 @@ class PersonalDataPage:
         self.driver.implicitly_wait(4)
         self.driver.maximize_window()
 
-    
+    # Заполнение формы с персональными данными
     def personal_data(self, name: str, last: str, address: str, email: str, phone: int, city: str, country: str, job: str, company: str):
         self.driver.find_element(By.CSS_SELECTOR, 'input[name = "first-name"]').send_keys(name)
         self.driver.find_element(By.CSS_SELECTOR, 'input[name = "last-name"]').send_keys(last)
@@ -27,12 +27,12 @@ class PersonalDataPage:
         ActionChains(self.driver).move_to_element(button).perform()
         button.click()
 
-    
+    # Определение,имеют ли поле ввода красный цвет,если оно не заполнено
     def zip_code_red(self):
         zip_code_color = self.driver.find_element(By.CSS_SELECTOR, "#zip-code").value_of_css_property("background-color")
         return zip_code_color == 'rgba(248, 215, 218, 1)'
 
-    
+    # Определения,имеют ли поля ввода зеленый цвет,если они заполнены
     def other_fields_green(self):
         other_fields = ["#first-name", "#last-name", "#address", "#e-mail",
                         "#phone", "#city", "#country", "#job-position", "#company"]
@@ -40,6 +40,6 @@ class PersonalDataPage:
             field_color = self.driver.find_element(By.CSS_SELECTOR, field).value_of_css_property("background-color")
         return field_color == 'rgba(209, 231, 221, 1)'
 
-    
+    # Закрытие запаха
     def close_driver(self):
         self.driver.quit()
