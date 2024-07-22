@@ -40,6 +40,6 @@ class PersonalDataPage:
             field_color = self.driver.find_element(By.CSS_SELECTOR, field).value_of_css_property("background-color")
         return field_color == 'rgba(209, 231, 221, 1)'
 
-    # Закрытие запаха
+    # Закрытие браузера
     def close_driver(self):
         self.driver.quit()
