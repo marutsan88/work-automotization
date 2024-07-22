@@ -27,6 +27,6 @@ class CalculatorPage:
                 EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15"))
             return self._driver.find_element(By.CSS_SELECTOR, "div.screen").text == "15"
 
-    # Закрытия драйвера веб-браузера
+    # Закрытие браузера
     def close_driver(self):
         self._driver.quit()
