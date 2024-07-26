@@ -23,7 +23,7 @@ def test_add_new_employee():
     email = "sun-zagar777@mail.ru"
     url = "string"
     phone = "865423175266"
-    birthdate = "2021-02-08"
+    birthdate = "2000-02-08"
     isActive = True
     new_employee = api.create_employee(firstName, lastName, middleName, companyId, email, url, phone, birthdate, isActive)
     emp_id = new_employee["id"]
@@ -36,7 +36,7 @@ def test_add_new_employee():
     assert body[-1]["middleName"] == "Алексеевна"
     assert body[-1]["companyId"] == companyId
     assert body[-1]["phone"] == "865423175266"
-    assert body[-1]["birthdate"] == "2021-02-08"
+    assert body[-1]["birthdate"] == "2000-02-08"
     assert body[-1]["isActive"] == True
     assert body[-1]["id"] == emp_id
 
