@@ -49,7 +49,7 @@ def test_get_employees_id():
     #Обращаемся к компании по ID
     new_company = api.get_company(new_id)
     companyId = new_company['id']
-    # получить список сотрудников новой компании до....
+    # получить список сотрудников новой компании 
     body = api.get_employees_list(companyId)
     begin_list = len(body)
     # добавить нового сотрудника
@@ -100,7 +100,7 @@ def test_patch_employee():
     isActive = True
     new_employee = api.create_employee(firstName, lastName, middleName, companyId, email, url, phone, birthdate, isActive)
     emp_id = new_employee["id"]
-    # получить список сотрудников новой компании после....
+    # получить список сотрудников новой компании 
     body = api.get_employees_list(companyId)
     #Обращаемся к сотруднику по ID
     new_employee = api.get_employee(emp_id)
