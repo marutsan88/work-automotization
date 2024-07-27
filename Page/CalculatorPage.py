@@ -7,7 +7,7 @@ class CalculatorPage:
     def __init__(self, driver: bool):
         self._driver = driver
         self._driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
-        self._driver.implicitly_wait(5)
+        self._driver.implicitly_wait(1)
         self._driver.maximize_window()
 
     def delay(self):
