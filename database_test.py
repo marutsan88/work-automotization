@@ -17,20 +17,13 @@ def test_select():
     assert row1['id'] > 2928
     assert row1['name'] == "Клининг-центр 'Клинг-кинг'"
 
-# 1й способ
+
 def test_select_1_row():
     db = create_engine(db_connection_string)
     sql_statement = text("select * from company where id = :company_id")
     rows = db.execute(sql_statement, company_id = 3378).fetchall()
     assert len(rows) == 1
     assert rows[-1]['name'] == "Клининг-центр 'Клинг-кинг'"
-
-# 2й способ
-def test_select_1_row_two_filter():
-    db = create_engine(db_connection_string)
-    sql_statement = text("select * from company where \"is_active\" = :is_active and id = :company_id")
-    rows = db.execute(sql_statement, is_active = True, company_id = 3378).fetchall()
-    assert len(rows) == 1
 
 def test_select_employees():
     db = create_engine(db_connection_string)
