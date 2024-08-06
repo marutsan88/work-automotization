@@ -13,11 +13,11 @@ db_connection_string = ('postgresql://x_clients_db_3fmx_user:'
 company_table = CompanyTable(db_connection_string)
 employee_table = EmployeeTable(db_connection_string)
 
-# New company
+# Новая компания
 name = 'NewCompany4'
 description = 'My new company 4'
 
-# New employee
+# Новый сотрудник
 id = 1
 first_name = "Ilya4"
 last_name = "Ilin"
@@ -30,22 +30,22 @@ is_active = True
 
 
 def test_get_employee_list():
-    # create new company in DB
+    # создать новую компанию в DB
     company_table.create(name, description)
     new_company_id = company_table.get_max_id()
 
-    # create new employee in DB
+    # создать нового сотрудника в DB
     employee_table.create(first_name, last_name, phone, new_company_id,
                           is_active)
     new_employee_id = employee_table.get_max_id()
 
-    # get employee list by API
+    # получить список сотрудников с помощью API
     employee_list_api = employee_api.get_employee_list(new_company_id)
 
-    # get employee list by DB
+    # получить список сотрудников в DB
     employee_list_db = employee_table.get_company_employees(new_company_id)
 
-    # delete new employee and new company from DB
+    # удалить нового сотрудника и новую компанию из DB
     employee_table.delete(new_employee_id)
     company_table.delete(new_company_id)
 
@@ -55,21 +55,21 @@ def test_get_employee_list():
 
 
 def test_create_employee():
-    # create new company in DB
+    # создать новую компанию в DB
     company_table.create(name, description)
     new_company_id = company_table.get_max_id()
 
-    # create new employee by API
+    # создать нового сотрудника с помощью API
     new_employee = employee_api.add_employee(id, first_name, last_name,
                                              middle_name, new_company_id,
                                              email, employee_url, phone,
                                              birthdate, is_active)
     new_employee_id = new_employee["id"]
 
-    # get employee from DB
+    # получить сотрудника из DB
     employee = employee_table.get_employee_by_id(new_employee_id)
 
-    # delete new employee and new company from DB
+    # удалить нового сотрудника и новую компанию из DB
     employee_table.delete(new_employee_id)
     company_table.delete(new_company_id)
 
@@ -77,16 +77,16 @@ def test_create_employee():
 
 
 def test_get_employee():
-    # create new company in DB
+    # создать новую компанию в DB
     company_table.create(name, description)
     new_company_id = company_table.get_max_id()
 
-    # create new employee in DB
+    # создать нового сотрудника в DB
     employee_table.create(first_name, last_name, phone, new_company_id,
                           is_active)
     new_employee_id = employee_table.get_max_id()
 
-    # get employee's info by API
+    # получите информацию о сотруднике с помощью API
     employee = employee_api.get_employee(new_employee_id)
 
     # delete new employee and new company from DB
@@ -99,16 +99,16 @@ def test_get_employee():
 
 
 def test_change_employee_by_api():
-    # create new company in DB
+    # создатиь новую компанию в DB
     company_table.create(name, description)
     new_company_id = company_table.get_max_id()
 
-    # create new employee in DB
+    # создать нового сотрудника в DB
     employee_table.create(first_name, last_name, phone, new_company_id,
                           is_active)
     new_employee_id = employee_table.get_max_id()
 
-    # patch employee by API
+    # изменить сотрудника с помощью API
     new_email = "new_new@gmail.com"
     new_url = "url2.com"
     new_is_active = False
@@ -121,10 +121,10 @@ def test_change_employee_by_api():
     assert patched_employee["url"] == new_url
     assert patched_employee["isActive"] == new_is_active
 
-    # get patched employee's info from DB
+    # получите исправленную информацию о сотруднике из DB
     employee = employee_table.get_employee_by_id(new_employee_id)
 
-    # delete new employee and new company from DB
+    # удалить нового сотрудника и новую компанию из DB
     employee_table.delete(new_employee_id)
     company_table.delete(new_company_id)
 
@@ -135,22 +135,22 @@ def test_change_employee_by_api():
 
 
 def test_change_employee_by_db():
-    # create new company in DB
+    # создать новую компанию в DB
     company_table.create(name, description)
     new_company_id = company_table.get_max_id()
 
-    # create new employee in DB
+    # создать нового сотрудника в DB
     employee_table.create(first_name, last_name, phone, new_company_id,
                           is_active)
     new_employee_id = employee_table.get_max_id()
 
-    # patch employee by DB
+    # изменить сотрудника с помощью DB
     new_email = "new_new@gmail.com"
     new_url = "url2.com"
     new_is_active = False
     employee_table.update(new_employee_id, new_email, new_url, new_is_active)
 
-    # get employee's info by API
+    # получите информацию о сотруднике с помощью API
     employee = employee_api.get_employee(new_employee_id)
 
     assert employee["id"] == new_employee_id
