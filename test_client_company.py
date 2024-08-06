@@ -19,9 +19,9 @@ description = 'My new company 4'
 
 # Новый сотрудник
 id = 1
-first_name = "Ilya4"
-last_name = "Ilin"
-middle_name = "Ilich"
+first_name = "Александр"
+last_name = "Семирунний"
+middle_name = "Игоревич"
 email = "new@gmail.com"
 employee_url = "url1.com"
 phone = "+79998887766"
